@@ -52,6 +52,12 @@ const ARCH_TABLE: &'static [(&'static str, &'static str)] = &[
     ("xcore", "xcore"),
     ("asmjs", "asmjs"),
     ("wasm32", "wasm32"),
+    ("e2k64", "e2k64"),
+    ("e2kv2", "e2k64"),
+    ("e2kv3", "e2k64"),
+    ("e2kv4", "e2k64"),
+    ("e2kv5", "e2k64"),
+    ("e2kv6", "e2k64"),
 ];
 
 pub fn matches_os(triple: &str, name: &str) -> bool {
