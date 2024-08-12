@@ -37,6 +37,7 @@ const ARCH_TABLE: &'static [(&'static str, &'static str)] = &[
     ("amd64", "x86_64"),
     ("arm", "arm"),
     ("arm64", "aarch64"),
+    ("e2k", "e2k"),
     ("hexagon", "hexagon"),
     ("i386", "x86"),
     ("i586", "x86"),
@@ -82,7 +83,10 @@ pub fn get_env(triple: &str) -> Option<&str> {
 }
 
 pub fn get_pointer_width(triple: &str) -> &'static str {
-    if (triple.contains("64") && !triple.ends_with("gnux32")) || triple.starts_with("s390x") {
+    if (triple.contains("64") && !triple.ends_with("gnux32"))
+        || triple.starts_with("s390x")
+        || triple.starts_with("e2k")
+    {
         "64bit"
     } else {
         "32bit"
